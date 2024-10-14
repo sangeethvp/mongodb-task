@@ -1,0 +1,162 @@
+//create the database
+
+use dbzenclass
+
+//create the collections
+db.createCollection("users")
+db.createCollection("codeketa")
+db.createCollection("topics")
+db.createCollection("tasks")
+db.createCollection("attendance")
+db.createCollection("mentors")
+db.createCollection("placements")
+
+db.users.insertMany([{
+        _id:1,
+        name:"sangeeth"
+        email:"sangeeth@gmail.com"
+        createdAt:new Date(2024-09-20)},
+        {_id:2,
+        name:"venkat"
+        email:"venkat@gmail.com"
+        createdAt:new Date(2024-09-21)},
+        {_id:3,
+        name:"pugal"
+        email:"pugal@gmail.com"
+        createdAt:new Date(2024-09-24)},
+        {_id:4,
+        name:"joe"
+        email:"joe@gmail.com"
+        createdAt:new Date(2024-09-28)},
+        {_id:5,
+        name:"jen"
+        email:"jen@gmail.com"
+        createdAt:new Date(2024-09-30)}])
+
+db.codeketa.insertMany([
+        {
+            user_id:1,
+            problemssolved:75,
+            topic:"mongodb",
+            score:150
+        },
+         {
+            user_id:2,
+            problemssolved:70,
+            topic:"node",
+            score:140
+        },
+         {
+            user_id:3,
+            problemssolved:45,
+            topic:"react",
+            score:90
+        },
+         {
+            user_id:4,
+            problemssolved:60,
+            topic:"html",
+            score:120
+        },
+         {
+            user_id:5,
+            problemssolved:50,
+            topic:"javascript",
+            score:100
+        },
+        
+        ])
+
+db.tasks.insertMany([
+        {task_name:"movieapp",
+        assignedOn:new Date('2024-10-05'),
+
+        submition:[
+       
+        {submition_Date:new Date('2024-10-10')
+        users_id:1},
+   
+        {user_id:2
+        submition_Date:new Date('2024-10-12')},
+        
+        {user_id:3,
+        submition_Date:new Date('2024-10-08')},
+       
+        {user_id:4,
+        submition_Date:new Date('2024-10-16')},
+
+        {user_id:5,
+        submition_Date:new Date('2024-10-18')}]},
+
+        {task_name:"movieapp"
+        assignedOn:new Date('2024-10-15')
+
+        submition:[
+       
+        {submition_Date:new Date('2024-10-16')
+        users_id:1},
+   
+        {user_id:2
+        submition_Date:new Date('2024-11-01')},
+        
+        {user_id:3,
+        submition_Date:new Date('2024-11-01')},
+       
+        {user_id:4,
+        submition_Date:new Date('2024-10-22')},
+
+        {user_id:5,
+        submition_Date:new Date('2024-11-03')}]}
+        ])
+
+
+db.topics.insertMany([
+    
+        {topic:"nodejs",
+        topic_Date:"2024-10-02"},
+        {topic:"expressjs",
+        topic_Date:"2024-10-04"},
+        {topic:"mongodb",
+        topic_Date:"2024-10-10"},
+        {topic:"api&postman",
+        topic_Date:"2024-10-17"},
+        {topic:"livepractice",
+        topic_Date:"2024-10-25"}
+
+])
+
+db.attendance.insertMany([
+    
+        {user_id:1
+        absentdays:[
+        new Date('2024-10-02'),
+        new Date('2024-10-10')]},
+        {user_id:2
+        absentdays:[
+        new Date('2024-10-05'),
+        new Date('2024-10-18')]},
+        {user_id:3
+        absentdays:new Date('2024-10-06'),
+        },
+        {user_id:4
+        absentdays:0
+        },
+        {user_id:5
+        absentdays:
+        new Date('2024-10-22'),
+        }
+])
+
+db.mentors.insertMany([
+    
+        {mentor_name:"venkat",
+        mentees:20},
+        {mentor_name:"sangeeth",
+        mentees:10},
+        {mentor_name:"henry",
+        mentees:12},
+        {mentor_name:"jen",
+        mentees:18},
+        {mentor_name:"karthi",
+        mentees:8}
+])
